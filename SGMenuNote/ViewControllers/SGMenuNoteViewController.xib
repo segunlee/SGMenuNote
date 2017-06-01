@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SGMenuNoteViewController" customModule="SGMenuNote" customModuleProvider="target">
+            <connections>
+                <outlet property="textView" destination="E5z-Z2-bT8" id="tl5-aQ-cjJ"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView focusRingType="exterior" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="450"/>
+            <subviews>
+                <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9H-mW-aeb">
+                    <rect key="frame" x="5" y="5" width="340" height="440"/>
+                    <clipView key="contentView" copiesOnScroll="NO" id="oHJ-nP-lwZ">
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="440"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="E5z-Z2-bT8" customClass="SGTextView" customModule="SGMenuNote" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="340" height="440"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="340" height="440"/>
+                                <size key="maxSize" width="463" height="10000000"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            </textView>
+                        </subviews>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="RaX-VX-Zbp">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="yS2-vd-rzV">
+                        <rect key="frame" x="-100" y="-100" width="15" height="440"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="W9H-mW-aeb" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="5" id="XzP-X8-ihZ"/>
+                <constraint firstAttribute="bottom" secondItem="W9H-mW-aeb" secondAttribute="bottom" constant="5" id="YfB-9r-IeD"/>
+                <constraint firstItem="W9H-mW-aeb" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="5" id="evS-LA-Ph3"/>
+                <constraint firstAttribute="trailing" secondItem="W9H-mW-aeb" secondAttribute="trailing" constant="5" id="uaG-Kf-Rdj"/>
+            </constraints>
+            <point key="canvasLocation" x="-132" y="129"/>
+        </customView>
+    </objects>
+</document>
