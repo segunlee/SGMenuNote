@@ -8,15 +8,18 @@
 
 import Cocoa
 
+// MARK: - Constants
 let SGSaveValuekey = "SGMenuNoteValueKey"
 
+
+// MARK: - AppDelegate
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: - Properties
     let statusItem = NSStatusBar.system().statusItem(withLength: -2)
     
-    let popover = NSPopover()
+    let popover = SGPopover()
     let noteVC = SGMenuNoteViewController(nibName: "SGMenuNoteViewController", bundle: nil)
     
     var hkm: JFHotkeyManager!
@@ -41,26 +44,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let button = statusItem.button {
             button.action = #selector(togglePopover(_:))
         }
+
         
-        
-        // StatusBar Menu Setup
-//        let menu = NSMenu()
-//        menu.addItem(NSMenuItem(title: "Toggle Note", action: #selector(togglePopover(_:)), keyEquivalent: ""))
-//        menu.addItem(NSMenuItem.separator())
-//        menu.addItem(NSMenuItem(title: "Quit Note", action: #selector(terminate(_:)), keyEquivalent: ""))
-//        statusItem.menu = menu
-        
-        
-        // PopOver Setup
+        // PopOver NoteVC Setup
         popover.appearance = NSAppearance(named: darkSide ? NSAppearanceNameVibrantDark : NSAppearanceNameVibrantLight)
         popover.behavior = .applicationDefined
         popover.contentViewController = noteVC
-        
+        noteVC?.delegate = self
         if let saveValue = UserDefaults().value(forKey: SGSaveValuekey) as? String {
             noteVC?.loadView()
             noteVC?.textView.string = saveValue
         }
-        
         
         
         // DarkSide Update
@@ -81,19 +75,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
 
-    // MARK: - Terminate
-    func terminate(_ sender: AnyObject) {
-//        NSApplication.shared().terminate(sender)
-    }
-    
-    
     // MARK: - StatusBarItem UI Update
     func updateStatusBarItem(darkSide: Bool) {
         if let button = self.statusItem.button {
             button.image = NSImage(named: darkSide ? "btn_statusbar_white" : "btn_statusbar_black")
         }
     }
-    
+ 
     
     // MARK: - Popover
     func showPopover(_ sender: AnyObject?) {
@@ -122,3 +110,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
+// MARK: - SGMenuNoteViewControllerProtocol
+extension AppDelegate: SGMenuNoteViewControllerProtocol {
+    func menuNoteViewControllerRequestDismissPopover(_ viewController: SGMenuNoteViewController) {
+        closePopover(viewController)
+    }
+}

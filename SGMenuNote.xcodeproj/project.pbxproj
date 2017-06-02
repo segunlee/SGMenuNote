@@ -15,6 +15,7 @@
 		67C2B1271EDFCC810012289F /* SGMenuNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C2B1251EDFCC810012289F /* SGMenuNoteViewController.swift */; };
 		67C2B12F1EDFCC9D0012289F /* WAYTheDarkSide.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2B12B1EDFCC9D0012289F /* WAYTheDarkSide.m */; };
 		67C2B1301EDFCC9D0012289F /* JFHotkeyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67C2B12E1EDFCC9D0012289F /* JFHotkeyManager.m */; };
+		67F741DF1EE0F0940070A7E0 /* SGPopover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F741DE1EE0F0940070A7E0 /* SGPopover.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		67C2B12B1EDFCC9D0012289F /* WAYTheDarkSide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAYTheDarkSide.m; sourceTree = "<group>"; };
 		67C2B12D1EDFCC9D0012289F /* JFHotkeyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFHotkeyManager.h; sourceTree = "<group>"; };
 		67C2B12E1EDFCC9D0012289F /* JFHotkeyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFHotkeyManager.m; sourceTree = "<group>"; };
+		67F741DE1EE0F0940070A7E0 /* SGPopover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGPopover.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				6757E7071EDC102200B7B58A /* AppDelegate.swift */,
 				673AEB091EE00C56006B8FF8 /* Extensions */,
+				67F741DC1EE0F05E0070A7E0 /* SGUIKit */,
 				67C2B1281EDFCC870012289F /* Library */,
 				67C2B1231EDFCC690012289F /* ViewControllers */,
 				6757E70B1EDC102200B7B58A /* Assets.xcassets */,
@@ -119,6 +122,22 @@
 			path = JFHotkeyManager;
 			sourceTree = "<group>";
 		};
+		67F741DC1EE0F05E0070A7E0 /* SGUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				67F741DD1EE0F0730070A7E0 /* SGPopover */,
+			);
+			path = SGUIKit;
+			sourceTree = "<group>";
+		};
+		67F741DD1EE0F0730070A7E0 /* SGPopover */ = {
+			isa = PBXGroup;
+			children = (
+				67F741DE1EE0F0940070A7E0 /* SGPopover.swift */,
+			);
+			path = SGPopover;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +164,7 @@
 		6757E6FC1EDC102200B7B58A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SG;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = SGIOS;
@@ -194,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67C2B1271EDFCC810012289F /* SGMenuNoteViewController.swift in Sources */,
+				67F741DF1EE0F0940070A7E0 /* SGPopover.swift in Sources */,
 				67C2B12F1EDFCC9D0012289F /* WAYTheDarkSide.m in Sources */,
 				673AEB0B1EE00C78006B8FF8 /* SGExtensions.swift in Sources */,
 				6757E7081EDC102200B7B58A /* AppDelegate.swift in Sources */,
